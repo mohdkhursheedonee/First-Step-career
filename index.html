@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>First Step Careers - Join Official WhatsApp Channel</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              green: '#25D366',
+              darkGreen: '#1ebd56',
+              deepBg: '#0b141a',
+              cardBg: '#111b21',
+              chatBg: '#0b141a',
+              bubbleBg: '#202c33',
+              bubbleOut: '#005c4b',
+              accent: '#00a884',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+          },
+          animation: {
+            'pulse-slow': 'pulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'bounce-subtle': 'bounceSubtle 2s infinite',
+            'float': 'float 3s ease-in-out infinite',
+            'glow': 'glow 2s ease-in-out infinite alternate',
+          },
+          keyframes: {
+            bounceSubtle: {
+              '0%, 100%': { transform: 'translateY(-3%)' },
+              '50%': { transform: 'translateY(0)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-6px)' },
+            },
+            glow: {
+              '0%': { boxShadow: '0 0 15px rgba(37, 211, 102, 0.4)' },
+              '100%': { boxShadow: '0 0 35px rgba(37, 211, 102, 0.8)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Inter Font & FontAwesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0b141a;
+      color: #e9edef;
+      overflow-x: hidden;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0b141a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #202c33;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #00a884;
+    }
+
+    /* Glassmorphism effects */
+    .glass-card {
+      background: rgba(17, 27, 33, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .glass-pill {
+      background: rgba(37, 211, 102, 0.08);
+      border: 1px solid rgba(37, 211, 102, 0.25);
+    }
+
+    /* Ripple Animation for CTA */
+    .btn-ripple {
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-ripple::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300px;
+      height: 300px;
+      background: rgba(255, 255, 255, 0.2);
+      opacity: 0;
+      border-radius: 100%;
+      transform: scale(1) translate(-50%, -50%);
+      transform-origin: 50% 50%;
+    }
+    .btn-ripple:focus:not(:active)::after {
+      animation: ripple 1s ease-out;
+    }
+
+    @keyframes ripple {
+      0% { transform: scale(0) translate(-50%, -50%); opacity: 0.5; }
+      100% { transform: scale(1) translate(-50%, -50%); opacity: 0; }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased selection:bg-brand-green selection:text-black pb-24 md:pb-12">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-gradient-to-r from-emerald-950 via-brand-bubbleOut to-emerald-950 border-b border-brand-accent/20 py-2.5 px-4 text-center text-xs sm:text-sm font-medium text-emerald-100 flex items-center justify-center gap-2 shadow-lg">
+    <span class="inline-block w-2.5 h-2.5 rounded-full bg-brand-green animate-ping"></span>
+    <span>🔥 <strong>14 New Verified Job Alerts</strong> posted today! Apply before deadline.</span>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="max-w-5xl mx-auto w-full px-4 pt-6 pb-2 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-full bg-brand-bubbleBg flex items-center justify-center border border-brand-accent/30 shadow-md">
+        <i class="fa-solid fa-briefcase text-brand-green text-lg"></i>
+      </div>
+      <div>
+        <span class="text-xs font-semibold uppercase tracking-wider text-brand-green">Career Portal</span>
+        <h2 class="text-sm font-bold text-white leading-none">First Step Careers</h2>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-2">
+      <button onclick="openModal('qrModal')" class="bg-brand-bubbleBg hover:bg-gray-800 text-gray-300 text-xs py-2 px-3 rounded-lg border border-gray-700/60 transition flex items-center gap-1.5 font-medium">
+        <i class="fa-solid fa-qrcode text-brand-green"></i>
+        <span class="hidden sm:inline">QR Code</span>
+      </button>
+      <button onclick="copyChannelLink()" class="bg-brand-bubbleBg hover:bg-gray-800 text-gray-300 text-xs py-2 px-3 rounded-lg border border-gray-700/60 transition flex items-center gap-1.5 font-medium">
+        <i class="fa-solid fa-share-nodes text-brand-green"></i>
+        <span>Share</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="max-w-4xl mx-auto w-full px-4 py-6 flex-grow flex flex-col gap-8">
+
+    <!-- Hero Conversion Card -->
+    <div class="glass-card rounded-3xl p-6 sm:p-10 text-center relative overflow-hidden shadow-2xl border border-gray-800/80">
+      
+      <!-- Top Ambient Background Glow -->
+      <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-64 h-64 bg-brand-green/20 rounded-full blur-3xl pointer-events-none"></div>
+
+      <!-- Trust Badge -->
+      <div class="inline-flex items-center gap-2 glass-pill px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold text-brand-green mb-6 shadow-sm border border-brand-green/30">
+        <i class="fa-solid fa-[#25D366] fa-circle-check"></i>
+        <span>Official WhatsApp Career Channel</span>
+      </div>
+
+      <!-- Channel Avatar & Badge -->
+      <div class="relative w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-5">
+        <div class="w-full h-full rounded-full bg-gradient-to-br from-brand-bubbleBg to-slate-900 border-2 border-brand-green/40 p-1 shadow-xl flex items-center justify-center overflow-hidden group">
+          <div class="w-full h-full rounded-full bg-slate-950 flex flex-col items-center justify-center text-center p-2 group-hover:scale-105 transition duration-300">
+            <span class="text-3xl sm:text-4xl">👔</span>
+          </div>
+        </div>
+        <div class="absolute bottom-1 right-1 bg-brand-green text-black text-xs p-1.5 rounded-full shadow-lg border-2 border-brand-cardBg flex items-center justify-center" title="Verified Channel">
+          <i class="fa-solid fa-check text-[10px] font-bold"></i>
+        </div>
+      </div>
+
+      <!-- Title & Channel Info -->
+      <h1 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-2">
+        First Step Careers <span class="text-brand-green">- TP</span>
+      </h1>
+      
+      <!-- Growth Metric Counters -->
+      <div class="flex items-center justify-center gap-4 text-xs sm:text-sm text-gray-400 mb-5 font-medium">
+        <span class="flex items-center gap-1.5">
+          <i class="fa-solid fa-users text-brand-green"></i> <span id="followerCount" class="text-white font-bold">12,480+</span> Candidates
+        </span>
+        <span class="text-gray-700">•</span>
+        <span class="flex items-center gap-1.5">
+          <i class="fa-solid fa-bell text-amber-400"></i> Daily Instant Alerts
+        </span>
+      </div>
+
+      <p class="text-gray-300 text-sm sm:text-base max-w-xl mx-auto leading-relaxed mb-8">
+        Get immediate access to <strong>100% verified job openings</strong>, walk-in drives, campus hiring, and remote work roles before they get flooded on job boards!
+      </p>
+
+      <!-- Key Value Highlights Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-left mb-8 max-w-2xl mx-auto">
+        <div class="bg-brand-bubbleBg/60 border border-gray-800 p-3.5 rounded-2xl flex items-start gap-3">
+          <div class="p-2 bg-brand-green/10 rounded-xl text-brand-green mt-0.5">
+            <i class="fa-solid fa-shield-halved text-sm"></i>
+          </div>
+          <div>
+            <h4 class="text-xs font-bold text-white">Direct & Verified</h4>
+            <p class="text-[11px] text-gray-400 leading-tight">No consultants. 100% direct company HR links.</p>
+          </div>
+        </div>
+
+        <div class="bg-brand-bubbleBg/60 border border-gray-800 p-3.5 rounded-2xl flex items-start gap-3">
+          <div class="p-2 bg-brand-green/10 rounded-xl text-brand-green mt-0.5">
+            <i class="fa-solid fa-bolt text-sm"></i>
+          </div>
+          <div>
+            <h4 class="text-xs font-bold text-white">Early Bird Edge</h4>
+            <p class="text-[11px] text-gray-400 leading-tight">Apply in the first 2 hours to boost selection chances.</p>
+          </div>
+        </div>
+
+        <div class="bg-brand-bubbleBg/60 border border-gray-800 p-3.5 rounded-2xl flex items-start gap-3">
+          <div class="p-2 bg-brand-green/10 rounded-xl text-brand-green mt-0.5">
+            <i class="fa-solid fa-laptop-house text-sm"></i>
+          </div>
+          <div>
+            <h4 class="text-xs font-bold text-white">All Experience Levels</h4>
+            <p class="text-[11px] text-gray-400 leading-tight">Freshers, experienced & WFH roles curated daily.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAIN CTA BUTTON -->
+      <div class="max-w-md mx-auto space-y-3">
+        <a href="https://whatsapp.com/channel/0029Vb2DJIiISTkIFQBEc20E" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="btn-ripple animate-glow group w-full bg-brand-green hover:bg-brand-darkGreen text-black font-extrabold text-base sm:text-lg py-4 px-8 rounded-full shadow-2xl transition duration-300 flex items-center justify-center gap-3">
+          <i class="fa-brands fa-whatsapp text-2xl group-hover:scale-110 transition"></i>
+          <span>JOIN WHATSAPP CHANNEL NOW</span>
+          <i class="fa-solid fa-arrow-right text-sm group-hover:translate-x-1 transition"></i>
+        </a>
+
+        <!-- Urgency Micro-copy -->
+        <p class="text-xs text-amber-400/90 font-medium flex items-center justify-center gap-1.5">
+          <i class="fa-solid fa-bell animate-bounce"></i>
+          <span>Important: Tap <strong>"Follow"</strong> & turn 🔔 <strong>Notifications ON</strong> inside WhatsApp!</span>
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Interactive Live Feed Preview Section -->
+    <div class="glass-card rounded-3xl p-5 sm:p-7 border border-gray-800">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5 border-b border-gray-800/80 pb-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-brand-green">Live Feed Preview</span>
+          <h3 class="text-lg font-bold text-white flex items-center gap-2">
+            <span>What you will receive inside the channel</span>
+            <span class="text-xs bg-emerald-900/60 text-emerald-300 px-2 py-0.5 rounded-full border border-emerald-700/50">Updated Real-Time</span>
+          </h3>
+        </div>
+
+        <!-- Filter Tags -->
+        <div class="flex flex-wrap gap-1.5" id="filterContainer">
+          <button onclick="filterJobs('all')" class="filter-btn active text-xs font-semibold px-3 py-1.5 rounded-lg bg-brand-green text-black transition">All Roles</button>
+          <button onclick="filterJobs('fresher')" class="filter-btn text-xs font-semibold px-3 py-1.5 rounded-lg bg-gray-800 text-gray-300 hover:bg-gray-700 transition">Freshers</button>
+          <button onclick="filterJobs('remote')" class="filter-btn text-xs font-semibold px-3 py-1.5 rounded-lg bg-gray-800 text-gray-300 hover:bg-gray-700 transition">Remote / WFH</button>
+          <button onclick="filterJobs('tech')" class="filter-btn text-xs font-semibold px-3 py-1.5 rounded-lg bg-gray-800 text-gray-300 hover:bg-gray-700 transition">Tech & IT</button>
+        </div>
+      </div>
+
+      <!-- WhatsApp Style Chat Box Simulator -->
+      <div class="bg-brand-chatBg rounded-2xl p-4 border border-gray-800/90 space-y-4 max-h-[420px] overflow-y-auto">
+        
+        <!-- Job Card 1 -->
+        <div class="job-card fresher tech bg-brand-bubbleBg p-4 rounded-xl border-l-4 border-brand-green shadow-md relative group">
+          <div class="flex justify-between items-start mb-2">
+            <span class="bg-emerald-950 text-brand-green text-[10px] font-bold px-2 py-0.5 rounded uppercase">🔥 Urgent Hiring</span>
+            <span class="text-[10px] text-gray-400">Today, 09:15 AM <i class="fa-solid fa-check-double text-sky-400"></i></span>
+          </div>
+          <h4 class="text-sm font-bold text-white mb-1">💼 Software Engineer Trainee / Associate</h4>
+          <p class="text-xs text-gray-300 mb-2"><strong>Company:</strong> Global Tech Solutions | <strong>Location:</strong> Hybrid / Bangalore</p>
+          <ul class="text-xs text-gray-400 space-y-1 mb-3">
+            <li>• <strong>Eligibility:</strong> 2023 / 2024 / 2025 Passouts (B.E/B.Tech/BCA/MCA)</li>
+            <li>• <strong>CTC:</strong> ₹4.5 LPA - ₹6.5 LPA</li>
+            <li>• <strong>Skills:</strong> Python / Java, SQL, Basic Web Dev</li>
+          </ul>
+          <div class="flex items-center justify-between pt-2 border-t border-gray-700/50">
+            <span class="text-[11px] text-brand-green font-medium">✅ Direct HR Application Link Posted</span>
+            <button onclick="triggerCTA()" class="text-xs bg-brand-green/20 hover:bg-brand-green text-brand-green hover:text-black font-semibold py-1 px-3 rounded-lg transition">Apply in Channel →</button>
+          </div>
+        </div>
+
+        <!-- Job Card 2 -->
+        <div class="job-card remote bg-brand-bubbleBg p-4 rounded-xl border-l-4 border-sky-400 shadow-md relative group">
+          <div class="flex justify-between items-start mb-2">
+            <span class="bg-sky-950 text-sky-400 text-[10px] font-bold px-2 py-0.5 rounded uppercase">🏠 100% Remote Job</span>
+            <span class="text-[10px] text-gray-400">Today, 08:30 AM <i class="fa-solid fa-check-double text-sky-400"></i></span>
+          </div>
+          <h4 class="text-sm font-bold text-white mb-1">💼 Customer Operations & Support Specialist</h4>
+          <p class="text-xs text-gray-300 mb-2"><strong>Company:</strong> FinTech Growth Ltd | <strong>Location:</strong> Work From Home</p>
+          <ul class="text-xs text-gray-400 space-y-1 mb-3">
+            <li>• <strong>Eligibility:</strong> Any Graduate (0 - 3 Years Experience)</li>
+            <li>• <strong>CTC:</strong> ₹3.8 LPA + Night Shift Allowances</li>
+            <li>• <strong>Requirements:</strong> Excellent English Communication Skills</li>
+          </ul>
+          <div class="flex items-center justify-between pt-2 border-t border-gray-700/50">
+            <span class="text-[11px] text-sky-400 font-medium">⚡ 25 Candidates Shortlisted Already</span>
+            <button onclick="triggerCTA()" class="text-xs bg-sky-500/20 hover:bg-sky-400 text-sky-300 hover:text-black font-semibold py-1 px-3 rounded-lg transition">View Details →</button>
+          </div>
+        </div>
+
+        <!-- Job Card 3 -->
+        <div class="job-card fresher tech bg-brand-bubbleBg p-4 rounded-xl border-l-4 border-purple-400 shadow-md relative group">
+          <div class="flex justify-between items-start mb-2">
+            <span class="bg-purple-950 text-purple-300 text-[10px] font-bold px-2 py-0.5 rounded uppercase">🎯 Walk-In Interview Alert</span>
+            <span class="text-[10px] text-gray-400">Yesterday, 05:45 PM <i class="fa-solid fa-check-double text-sky-400"></i></span>
+          </div>
+          <h4 class="text-sm font-bold text-white mb-1">💼 Digital Marketing & Content Executive</h4>
+          <p class="text-xs text-gray-300 mb-2"><strong>Company:</strong> Apex Media Agency | <strong>Location:</strong> Noida / Gurgaon / Pune</p>
+          <ul class="text-xs text-gray-400 space-y-1 mb-3">
+            <li>• <strong>Venue Details & Resume Checklist</strong> attached in message</li>
+            <li>• <strong>On-the-spot Offer Letter</strong> for selected candidates</li>
+          </ul>
+          <div class="flex items-center justify-between pt-2 border-t border-gray-700/50">
+            <span class="text-[11px] text-purple-300 font-medium">📍 Venue Address Provided</span>
+            <button onclick="triggerCTA()" class="text-xs bg-purple-500/20 hover:bg-purple-400 text-purple-200 hover:text-black font-semibold py-1 px-3 rounded-lg transition">Join Channel →</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- How to Never Miss a Job (3 Simple Steps) -->
+    <div class="glass-card rounded-3xl p-6 sm:p-8 border border-gray-800">
+      <div class="text-center mb-8">
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-green">Action Guide</span>
+        <h3 class="text-xl sm:text-2xl font-bold text-white">How to Get Instant Interview Calls</h3>
+        <p class="text-xs sm:text-sm text-gray-400 mt-1">Follow these 3 steps right after clicking the join button</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Step 1 -->
+        <div class="bg-brand-bubbleBg/40 border border-gray-800/80 p-5 rounded-2xl relative text-center">
+          <div class="w-10 h-10 bg-brand-green text-black font-extrabold rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg">1</div>
+          <h4 class="font-bold text-white text-sm mb-1">Click "Follow"</h4>
+          <p class="text-xs text-gray-400">Tap the green follow button at the top right corner of our WhatsApp channel.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bg-brand-bubbleBg/40 border border-gray-800/80 p-5 rounded-2xl relative text-center">
+          <div class="w-10 h-10 bg-amber-400 text-black font-extrabold rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg">2</div>
+          <h4 class="font-bold text-white text-sm mb-1">Turn 🔔 Bell Icon ON</h4>
+          <p class="text-xs text-gray-400">Unmute notifications! WhatsApp mutes channels by default so you don't miss updates.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bg-brand-bubbleBg/40 border border-gray-800/80 p-5 rounded-2xl relative text-center">
+          <div class="w-10 h-10 bg-sky-400 text-black font-extrabold rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg">3</div>
+          <h4 class="font-bold text-white text-sm mb-1">Apply Immediately</h4>
+          <p class="text-xs text-gray-400">Open the direct application link within 2 hours of posting for maximum visibility.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Viral Share Tool Section -->
+    <div class="glass-card rounded-3xl p-6 sm:p-8 border border-gray-800 text-center">
+      <div class="max-w-xl mx-auto">
+        <div class="w-12 h-12 rounded-2xl bg-brand-green/10 text-brand-green flex items-center justify-center mx-auto mb-3">
+          <i class="fa-solid fa-heart text-xl"></i>
+        </div>
+        <h3 class="text-lg sm:text-xl font-bold text-white mb-2">Help Your Friends Find Their Next Role</h3>
+        <p class="text-xs sm:text-sm text-gray-400 mb-6">Know someone searching for a job or internship? Share this channel directly on your WhatsApp groups & status.</p>
+
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <button onclick="shareOnWhatsApp()" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm py-3 px-6 rounded-xl transition flex items-center justify-center gap-2 shadow-lg">
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+            <span>Share to WhatsApp Friends</span>
+          </button>
+          
+          <button onclick="copyChannelLink()" class="bg-gray-800 hover:bg-gray-700 text-gray-200 font-semibold text-sm py-3 px-6 rounded-xl border border-gray-700 transition flex items-center justify-center gap-2">
+            <i class="fa-solid fa-copy text-brand-green"></i>
+            <span>Copy Channel Invite Link</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Floating Mobile Sticky CTA Bar -->
+  <div class="fixed bottom-0 left-0 right-0 p-3 bg-brand-cardBg/95 border-t border-gray-800 backdrop-blur-lg sm:hidden z-40 shadow-2xl">
+    <a href="https://whatsapp.com/channel/0029Vb2DJIiISTkIFQBEc20E" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="w-full bg-brand-green active:bg-brand-darkGreen text-black font-extrabold text-sm py-3 px-4 rounded-xl shadow-lg flex items-center justify-center gap-2">
+      <i class="fa-brands fa-whatsapp text-xl"></i>
+      <span>JOIN CHANNEL NOW (FREE)</span>
+    </a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="max-w-4xl mx-auto w-full px-4 py-8 text-center border-t border-gray-800/80 text-xs text-gray-500 space-y-2">
+    <p>© <span id="year">2026</span> First Step Careers - TP. All rights reserved.</p>
+    <p class="text-[11px] text-gray-600">Disclaimer: First Step Careers is an informational career guidance hub. We never ask for payment or money for job placements.</p>
+  </footer>
+
+  <!-- QR Code Modal -->
+  <div id="qrModal" class="fixed inset-0 bg-black/80 backdrop-blur-md hidden z-50 flex items-center justify-center p-4">
+    <div class="glass-card max-w-sm w-full rounded-3xl p-6 text-center relative border border-gray-700 shadow-2xl animate-bounce-subtle">
+      <button onclick="closeModal('qrModal')" class="absolute top-4 right-4 text-gray-400 hover:text-white text-lg">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <h3 class="text-lg font-bold text-white mb-1">Scan to Join Channel</h3>
+      <p class="text-xs text-gray-400 mb-4">Open your phone camera or WhatsApp camera to scan</p>
+
+      <!-- SVG QR Code Generator Representation -->
+      <div class="bg-white p-4 rounded-2xl inline-block shadow-inner mb-4">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://whatsapp.com/channel/0029Vb2DJIiISTkIFQBEc20E" 
+             alt="First Step Careers WhatsApp Channel QR Code" 
+             class="w-48 h-48 mx-auto"
+             onerror="this.src='https://placehold.co/200x200/ffffff/000000?text=Scan+QR+Code'">
+      </div>
+
+      <p class="text-xs text-brand-green font-medium">First Step Careers - TP</p>
+
+      <div class="mt-4 pt-4 border-t border-gray-800">
+        <button onclick="closeModal('qrModal')" class="w-full bg-gray-800 hover:bg-gray-700 text-white text-xs font-bold py-2.5 rounded-xl transition">
+          Close Window
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Box -->
+  <div id="toast" class="fixed top-5 right-5 bg-brand-green text-black px-4 py-3 rounded-2xl shadow-2xl font-bold text-xs flex items-center gap-2 transform translate-y-[-100px] opacity-0 transition-all duration-300 z-50">
+    <i class="fa-solid fa-circle-check text-base"></i>
+    <span id="toastMessage">Link copied to clipboard!</span>
+  </div>
+
+  <script>
+    // Set Current Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Channel Invite Link
+    const CHANNEL_LINK = "https://whatsapp.com/channel/0029Vb2DJIiISTkIFQBEc20E";
+
+    // Copy Link function with fallback
+    function copyChannelLink() {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(CHANNEL_LINK).then(() => {
+          showToast("Channel invite link copied!");
+        }).catch(() => {
+          fallbackCopy(CHANNEL_LINK);
+        });
+      } else {
+        fallbackCopy(CHANNEL_LINK);
+      }
+    }
+
+    function fallbackCopy(text) {
+      const tempInput = document.createElement("input");
+      tempInput.value = text;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempInput);
+      showToast("Channel invite link copied!");
+    }
+
+    // Share directly to WhatsApp with engineered high-converting message
+    function shareOnWhatsApp() {
+      const shareMsg = encodeURIComponent(
+        "🚨 *Stop searching blindly for jobs!*\n\n" +
+        "Join *First Step Careers* on WhatsApp to get daily verified job updates (Freshers, Experienced, Remote & Campus Drives).\n\n" +
+        "👉 *Join Channel Here:* " + CHANNEL_LINK
+      );
+      window.open(`https://api.whatsapp.com/send?text=${shareMsg}`, '_blank');
+    }
+
+    // Trigger Primary Join Action
+    function triggerCTA() {
+      window.open(CHANNEL_LINK, '_blank');
+    }
+
+    // Modal Control
+    function openModal(id) {
+      document.getElementById(id).classList.remove('hidden');
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).classList.add('hidden');
+    }
+
+    // Toast Control
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const toastMessage = document.getElementById('toastMessage');
+      toastMessage.textContent = message;
+      
+      toast.classList.remove('translate-y-[-100px]', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-[-100px]', 'opacity-0');
+      }, 3000);
+    }
+
+    // Interactive Job Filtering logic
+    function filterJobs(category) {
+      const cards = document.querySelectorAll('.job-card');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      // Update button styles
+      buttons.forEach(btn => {
+        btn.classList.remove('active', 'bg-brand-green', 'text-black');
+        btn.classList.add('bg-gray-800', 'text-gray-300');
+      });
+
+      event.currentTarget.classList.add('active', 'bg-brand-green', 'text-black');
+      event.currentTarget.classList.remove('bg-gray-800', 'text-gray-300');
+
+      // Filter Cards
+      cards.forEach(card => {
+        if (category === 'all' || card.classList.contains(category)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Animated counter effect for follower social proof
+    function animateCountUp() {
+      const el = document.getElementById('followerCount');
+      if (!el) return;
+      
+      let start = 12100;
+      const end = 12480;
+      const duration = 1500;
+      const stepTime = 30;
+      const steps = duration / stepTime;
+      const increment = (end - start) / steps;
+
+      const timer = setInterval(() => {
+        start += increment;
+        if (start >= end) {
+          el.textContent = end.toLocaleString() + '+';
+          clearInterval(timer);
+        } else {
+          el.textContent = Math.floor(start).toLocaleString() + '+';
+        }
+      }, stepTime);
+    }
+
+    // Initialize on page load
+    window.onload = function() {
+      animateCountUp();
+    };
+  </script>
+</body>
+</html>
